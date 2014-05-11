@@ -182,7 +182,12 @@ public class TurnRuleJUnitTest extends BaseJUnitTest {
 		// start the game
 		ProcessInstance pi = ksession.startProcess("cz.muni.fi.civ.newohybat.bpmn.turn", params);
 		ksession.insert(pi);
-		ksession.fireAllRules();
+		Thread t1 = new Thread(new Runnable() {
+		     public void run()
+		     {
+		          // code goes here.
+		    	 ksession.fireAllRules();
+		     }});  t1.start();
 		
 		try {
 			Thread.sleep(1000);

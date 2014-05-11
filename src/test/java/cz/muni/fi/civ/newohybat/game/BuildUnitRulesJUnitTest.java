@@ -47,7 +47,7 @@ public class BuildUnitRulesJUnitTest extends BaseJUnitTest {
     	CityDTO city = getCity(1L, "marefy");
     	Set<String> improvements = new HashSet<String>();
     	city.setImprovements(improvements);
-    	
+    	city.getEnabledUnitTypes().add("phalanx");
     	// this type of unit will be created and triggers the process
     	city.setResourcesSurplus(300);
     	
@@ -112,7 +112,7 @@ public class BuildUnitRulesJUnitTest extends BaseJUnitTest {
     	CityDTO city = getCity(1L, "marefy");
     	Set<String> improvements = new HashSet<String>();
     	city.setImprovements(improvements);
-    	
+    	city.getEnabledUnitTypes().add("phalanx");
     	// this type of unit will be created and triggers the process
     	city.setResourcesSurplus(300);
     	
@@ -189,6 +189,7 @@ public class BuildUnitRulesJUnitTest extends BaseJUnitTest {
     	CityDTO city = getCity(1L, "marefy");
     	Set<String> improvements = new HashSet<String>();
     	city.setImprovements(improvements);
+    	city.getEnabledUnitTypes().add("phalanx");
     	city.setResourcesSurplus(300);
     	
     	UnitTypeDTO unitType = getUnitType(1L,"phalanx",150);
@@ -229,6 +230,7 @@ public class BuildUnitRulesJUnitTest extends BaseJUnitTest {
     	CityDTO city = getCity(1L, "marefy");
     	Set<String> improvements = new HashSet<String>();
     	city.setImprovements(improvements);
+    	city.getEnabledUnitTypes().add("phalanx");
     	city.setResourcesSurplus(60);
     	UnitTypeDTO unitType = getUnitType(1L,"phalanx",150);
     	
