@@ -3,11 +3,11 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>cz.muni.fi.civ</groupId>
-  <artifactId>civ.game</artifactId>
+  <artifactId>civ-game</artifactId>
   <version>1.0-SNAPSHOT</version>
   <packaging>jar</packaging>
 
-  <name>civ.game</name>
+  <name>civ-game</name>
   <url>http://maven.apache.org</url>
 
   <properties>
@@ -149,7 +149,7 @@
         </dependency>
     <dependency>
     	<groupId>cz.muni.fi.civ</groupId>
-    	<artifactId>civ.backend</artifactId>
+    	<artifactId>civ-persistence</artifactId>
     	<version>1.0-SNAPSHOT</version>
     </dependency>
     <dependency>
