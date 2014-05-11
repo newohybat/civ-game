@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<persistence version="2.0"
+             xsi:schemaLocation="http://java.sun.com/xml/ns/persistence
+                                 http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd
+                                 http://java.sun.com/xml/ns/persistence/orm 
+                                 http://java.sun.com/xml/ns/persistence/orm_2_0.xsd"
+             xmlns:orm="http://java.sun.com/xml/ns/persistence/orm"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xmlns="http://java.sun.com/xml/ns/persistence">
+
+  <persistence-unit name="org.jbpm.domain" transaction-type="JTA">
+    <provider>org.hibernate.ejb.HibernatePersistence</provider>
+    <jta-data-source>java:jboss/datasources/ExampleDS</jta-data-source>
+    <mapping-file>META-INF/JBPMorm.xml</mapping-file>
+    <class>org.drools.persistence.info.SessionInfo</class>
+    <class>org.jbpm.persistence.processinstance.ProcessInstanceInfo</class>
+    <class>org.drools.persistence.info.WorkItemInfo</class>
+    <class>org.jbpm.persistence.correlation.CorrelationKeyInfo</class>
+    <class>org.jbpm.persistence.correlation.CorrelationPropertyInfo</class>
+    
+    <properties>
+            <property name="hibernate.max_fetch_depth" value="3"/>
+            <property name="hibernate.hbm2ddl.auto" value="update" />
+            <property name="hibernate.show_sql" value="false" />
+            <!-- The following line is what's used in Hibernate 4 instead of a TransactionManagerLookup class -->
+            <property name="hibernate.transaction.jta.platform" value="cz.muni.fi.civ.newohybat.game.init.CustomJbossJTAPlatform" />
+            <!-- <property name="hibernate.transaction.manager_lookup_class" value="org.hibernate.transaction.BTMTransactionManagerLookup" />-->
+            <property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect"/>
+            <property name="hibernate.connection.username" value="sa" />
+            <property name="hibernate.connection.password" value="sa" />
+            <!-- BZ 841786: AS7/EAP 6/Hib 4 uses new (sequence) generators which seem to cause problems -->      
+      		<property name="hibernate.id.new_generator_mappings" value="false" />
+        </properties>          
+  </persistence-unit>
+    
+
+    
+</persistence>
